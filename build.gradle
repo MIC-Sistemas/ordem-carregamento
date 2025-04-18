@@ -2,10 +2,43 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.5.0-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'jacoco'
 }
 
 group = 'br.com.micsistemas'
 version = '0.0.1-SNAPSHOT'
+
+jacocoTestReport {
+	reports {
+		xml.required.set(true)
+		csv.required.set(false)
+		html.required.set(true)
+	}
+}
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			element = 'CLASS'
+			excludes = [
+					'br/com/micsistemas/ordem_carregamento/config/**',
+					'br.com.micsistemas.ordem_carregamento.OrdemCarregamentoApplication',
+			]
+			limit {
+				counter = 'LINE'
+				value = 'COVEREDRATIO'
+				minimum = 0.80
+			}
+			limit {
+				counter = 'BRANCH'
+				value = 'MISSEDCOUNT'
+				maximum = 0
+			}
+		}
+	}
+}
+
+check.dependsOn(jacocoTestCoverageVerification)
 
 java {
 	toolchain {
@@ -32,4 +65,5 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	finalizedBy(jacocoTestReport)
 }
