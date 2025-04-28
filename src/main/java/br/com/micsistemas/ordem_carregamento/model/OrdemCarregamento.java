@@ -1,17 +1,31 @@
 package br.com.micsistemas.ordem_carregamento.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@Schema(description = "Modelo de Ordem de Carregamento")
 public class OrdemCarregamento implements Serializable {
 
-    private String nrOc;
+    @Schema(description = "ID da Ordem de Carregamento", example = "12345")
+    @NotNull(message = "ID da Ordem de Carregamento não pode ser nulo")
+    @Min(value = 1, message = "ID da Ordem de Carregamento deve ser maior que 0")
+    private Integer nrOc;
+
+    @Schema(description = "Nome da empresa", example = "YARA BRASIL FERTILIZANTES SA", maxLength = 50)
+    @Size(max = 50, message = "Nome da empresa nao deve ultrapassar 50 caracteres")
     private String nomeEmpresa;
+
+    @CNPJ
     private String cnpjEmpresa;
     private String enderecoEmpresa;
     private String numeroPedido;
