@@ -34,8 +34,8 @@ class OrdemCarregamentoApplicationTests {
 		ResponseEntity<Void> response = restTemplate.withBasicAuth("admin", "secret")
 				.postForEntity("/ordem-carregamento", request, Void.class);
 
-		// Validate that the API returns 201 CREATED
-		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+		// Validate that the API returns 200 OK
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
 	}
 

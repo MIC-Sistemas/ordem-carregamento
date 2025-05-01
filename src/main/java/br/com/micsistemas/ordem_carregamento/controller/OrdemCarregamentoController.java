@@ -20,6 +20,6 @@ public class OrdemCarregamentoController {
     @PostMapping
     public ResponseEntity<Void> createOrdemCarregamento(@RequestBody OrdemCarregamento ordemCarregamento) {
         ordemCarregamentoRepository.save(ordemCarregamento);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
