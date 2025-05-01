@@ -40,7 +40,7 @@ class FileOrdemCarregamentoRepositoryTest {
     @Test
     void testSave_Success() throws IOException {
         OrdemCarregamento ordemCarregamento = new OrdemCarregamento();
-        ordemCarregamento.setNrOc(12345);
+        ordemCarregamento.setNumeroOc(12345);
 
         when(objectMapper.writeValueAsString(ordemCarregamento)).thenReturn("{\"nrOc\":\"12345\"}");
 
@@ -55,7 +55,7 @@ class FileOrdemCarregamentoRepositoryTest {
     @Test
     void testSave_WriteIOException() {
         OrdemCarregamento ordemCarregamento = new OrdemCarregamento();
-        ordemCarregamento.setNrOc(12345);
+        ordemCarregamento.setNumeroOc(12345);
 
         try (MockedStatic<Files> mockedFiles = mockStatic(Files.class)) {
             mockedFiles.when(() -> Files.newBufferedWriter(any(Path.class), eq(StandardOpenOption.APPEND)))
