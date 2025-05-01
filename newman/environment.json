@@ -1,0 +1,27 @@
+{
+	"id": "3a6b5263-654a-4e88-be7e-2ac859ca6a71",
+	"name": "ordemCarregamento",
+	"values": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080/ordem-carregamento",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "admin",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "secret",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-05-01T02:30:10.002Z",
+	"_postman_exported_using": "Postman/11.43.3"
+}

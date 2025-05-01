@@ -21,7 +21,7 @@ class OrdemCarregamentoApplicationTests {
 	void contextLoads() {
 
 		OrdemCarregamento oc = new OrdemCarregamento();
-		oc.setNrOc("12345");
+		oc.setNrOc(12345);
 
 		// Prepare headers
 		HttpHeaders headers = new HttpHeaders();

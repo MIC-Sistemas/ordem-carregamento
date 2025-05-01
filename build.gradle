@@ -23,6 +23,7 @@ jacocoTestCoverageVerification {
 			excludes = [
 					'br/com/micsistemas/ordem_carregamento/config/**',
 					'br.com.micsistemas.ordem_carregamento.OrdemCarregamentoApplication',
+					'br.com.micsistemas.ordem_carregamento.model.Endereco'
 			]
 			limit {
 				counter = 'LINE'

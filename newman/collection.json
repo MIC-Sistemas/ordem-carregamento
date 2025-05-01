@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "ed34e142-e767-413d-bac9-3c5eaa310917",
+		"name": "OrdemCarregamento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1607677"
+	},
+	"item": [
+		{
+			"name": "EnviaOrdemCarregamento",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"numeroOc\": 12345,\n  \"nomeEmpresa\": \"BANCO DO BRASIL SA\",\n  \"cnpjEmpresa\": \"00.000.000/0001-91\",\n  \"enderecoEmpresa\": {\n    \"logradouro\": \"QUADRA SAUN QUADRA 5 BLOCO B TORRE I II III SN\",\n    \"complemento\": \"ANDAR T I SL S101 A S\",\n    \"bairro\": \"Asa Norte\",\n    \"cidade\": \"Brasilia\",\n    \"uf\": \"DF\",\n    \"cep\": \"70040-912\"\n  },\n  \"numeroPedido\": \"1234567890\",\n  \"numeroDi\": \"24/1234567-8\",\n  \"codigoProduto\": \"112233\",\n  \"nomeProduto\": \"Cloreto de potassio\",\n  \"nomeTransportadora\": \"AZUL LINHAS AEREAS BRASILEIRAS S.A.\",\n  \"cpfCnpjTransportadora\": \"09.296.295/0001-60\",\n  \"placaCavalo\": \"ABC1234\",\n  \"placaCarreta1\": \"ABC1234\",\n  \"placaCarreta2\": \"ABC1234\",\n  \"placaCarreta3\": \"ABC1234\",\n  \"dataHoraOc\": \"2025-05-01T01:32:39.679Z\",\n  \"situacaoOc\": \"ATIVA\",\n  \"nomeNavio\": \"POWER RANGER\",\n  \"nomeMotorista\": \"Franz Kafka\",\n  \"cpfMotorista\": \"488.840.840-83\",\n  \"pesoMaximo\": 35,\n  \"nomeDestinatario\": \"Agropecuaria Roncador Ltda\",\n  \"cpfCnpjDestinatario\": \"03.144.060/0001-76\",\n  \"enderecoDestinatario\": {\n    \"logradouro\": \"QUADRA SAUN QUADRA 5 BLOCO B TORRE I II III SN\",\n    \"complemento\": \"ANDAR T I SL S101 A S\",\n    \"bairro\": \"Asa Norte\",\n    \"cidade\": \"Brasilia\",\n    \"uf\": \"DF\",\n    \"cep\": \"70040-912\"\n  },\n  \"observacao\": \"Exemple de observacao\",\n  \"pdfOc\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

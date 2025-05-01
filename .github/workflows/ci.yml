@@ -34,3 +34,21 @@ jobs:
         with:
           name: jacoco-coverage-report
           path: build/reports/jacoco/test/html
+
+      - name: Start Application
+        run: ./gradlew bootRun &
+        env:
+          SPRING_PROFILES_ACTIVE: test # Define o perfil de teste, se necessário
+
+      - name: Wait for Application to Start
+        run: |
+          echo "Aguardando a aplicação iniciar..."
+          sleep 10
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run Newman Tests
+        env:
+          PASSWORD: ${{ secrets.NEWMAN_PASSWORD }}
+        run: newman run newman/collection.json --environment newman/environment.json --env-var "password=$PASSWORD"
